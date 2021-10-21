@@ -1,4 +1,5 @@
 <?php
+require('../config.php');
 ob_start();
 session_start();
     if($_SESSION['email']=="admin@gmail.com" and $_SESSION['pass']=="123456"){
@@ -52,14 +53,34 @@ Website: http://www.webthemez.com/
 		<?php
             if(isset($_GET['page_layout'])){
                 switch($_GET['page_layout']){
+                    case 'ds_loaiSP': include_once'ds_loaiSP.php';
+                        break;
+                    case 'loaiSP_them': include_once'loaiSP_them.php';
+                        break;
+                    case 'loaiSP_sua': include_once'loaiSP_sua.php';
+                        break;
+                    case 'ds_ncc': include_once'ds_ncc.php';
+                        break;
+                    case 'ncc_them': include_once'ncc_them.php';
+                        break;
+                    case 'ncc_sua': include_once'ncc_sua.php';
+                        break;
                     case 'ds_sanpham': include_once'ds_sanpham.php';
                         break;
-                    case 'ds_loaiSP': include_once'ds_loaiSP.php';
+                    case 'ds_khachhang': include_once'ds_khachhang.php';
+                        break;
+                    case 'khachhang_them': include_once'khachhang_them.php';
+                        break;
+                    case 'khachhang_sua': include_once'khachhang_sua.php';
+                        break;
+                    case 'ds_sanpham': include_once'ds_sanpham.php';
+                        break;
+                    case 'sanpham_them': include_once'sanpham_them.php';
                         break;
                     case 'home': include_once'ds_loaiSP.php';
                         break;
                 }
-            }else include_once'ds_loaiSP.php';
+            }else include_once'ds_sanpham.php';
         ?>
                 <!-- /. ROW  -->
 			

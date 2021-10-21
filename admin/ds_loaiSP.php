@@ -18,19 +18,24 @@
     </script>
          <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
+    <style type="text/css">
+        th{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-        <div id="page-wrapper" >
-          <div class="header"> 
-                        <h1 class="page-header">
-                            DANH MỤC LOẠI SẢN PHẨM
-                        </h1>
-                        <ol class="breadcrumb">
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Quản lý sản phẩm</a></li>
-                      <li class="active">Danh mục loại sản phẩm</li>
-                    </ol> 
+    <div id="page-wrapper" >
+        <div class="header"> 
+            <h1 class="page-header">
+                DANH MỤC LOẠI SẢN PHẨM
+            </h1>
+            <ol class="breadcrumb">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Quản lý sản phẩm</a></li>
+                  <li class="active">Danh mục loại sản phẩm</li>
+            </ol> 
                                     
         </div>
         
@@ -41,7 +46,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Loại sản phẩm
+                            <div class="title">Danh mục loại sản phẩm</div>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -57,15 +62,23 @@
                                     <tbody>
                                         <?php
                                             $sql="select * from loai_hang";
-                                            $result = mysqli_query($conn, $sql);
-                                            if(mysqli_num_rows($result)){
-                                                while ($row = mysqli_fetch_array($result)){
-                                                    echo"<tr class='odd gradeX'>";
-                                                    echo"<td>".$row["id"]."</td>";
-                                                    echo"<td>".$row["loai_hang_ten"]."</td>";
-                                                    echo"<td class='center'><i class='fa fa-pencil' aria-hidden='true'></i></td>";
-                                                    echo"<td class='center'><i class='fa fa-trash' aria-hidden='true'></i></td>";
-                                                    echo"</tr>";
+                                            $result = $conn->query($sql);
+                                            if($result->num_rows >0){
+                                                while ($row = $result->fetch_array()){
+                                        ?>
+                                        <tr class='odd gradeX'>
+                                            <td><?php echo $row["id"];?></td>
+                                            <td>
+                                                <a href="index.php?page_layout=loaiSP_sua&loai_id=<?php echo $row['id']; ?>"><?php echo $row["loai_hang_ten"];?></a>
+                                            </td>
+                                            <td class="center" align="center">
+                                                <a href="index.php?page_layout=loaiSP_sua&loai_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
+                                            </td>
+                                            <td class='center' align='center'>
+                                                <a onclick="confirm('Bạn có chắc chắn muốn xóa danh mục này không?');" href="loaiSP_xoa.php?loai_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php
                                                 }
                                             }
                                         ?>
@@ -76,11 +89,11 @@
                         </div>
                     </div>
                     <!--End Advanced Tables -->
+                    <a class="btn btn-primary" href="index.php?page_layout=loaiSP_them">Thêm mới</a>
                 </div>
             </div>
                 <!-- /. ROW  -->
         </div>
-               <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p></footer>
     </div>
              <!-- /. PAGE INNER  -->
     <!-- /. WRAPPER  -->

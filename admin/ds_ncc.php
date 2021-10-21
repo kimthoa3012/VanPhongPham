@@ -3,6 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    
+    <script type="text/javascript">
+        function xoa_dm(){
+            var conf=cofirm("Bạn có chắc chắn muốn xóa danh mục này không?");
+            return conf;
+        }
+    </script>
     <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- JS Scripts-->
@@ -29,16 +36,16 @@
     <div id="page-wrapper" >
         <div class="header"> 
             <h1 class="page-header">
-                DANH MỤC SẢN PHẨM
+                Danh mục nhà cung cấp
             </h1>
             <ol class="breadcrumb">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Quản lý sản phẩm</a></li>
-                  <li class="active">Danh mục sản phẩm</li>
+                  <li><a href="#">Quản lý danh mục</a></li>
+                  <li class="active">Nhà cung cấp</li>
             </ol> 
                                     
         </div>
-
+        
             <div id="page-inner"> 
                
             <div class="row">
@@ -46,40 +53,40 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="title">Danh mục sản phẩm</div>
+                            <div class="title">Danh mục nhà cung cấp</div>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Mã</th>
-                                            <th>Ảnh</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th>Số lượng</th>
-                                            <th>Giá</th>
+                                            <th>Mã nhà cung cấp</th>
+                                            <th>Tên nhà cung cấp</th>
+                                            <th>Địa chỉ</th>
+                                            <th>SDT</th>
+                                            <th>Email</th>
                                             <th>Sửa</th>
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql="select * from san_pham";
+                                            $sql="select * from nha_cung_cap";
                                             $result = $conn->query($sql);
                                             if($result->num_rows >0){
                                                 while ($row = $result->fetch_array()){
                                         ?>
                                         <tr class='odd gradeX'>
                                             <td><?php echo $row["id"];?></td>
-                                            <td><img src="../image/<?php echo $row['sp_anh'];?>" width="80px"></td>
-                                            <td><?php echo $row["sp_ten"];?></td>
-                                            <td><?php echo $row["sp_so_luong"];?></td>
-                                            <td><?php echo $row["sp_gia"];?></td>
+                                            <td><?php echo $row["ncc_ten"];?></td>
+                                            <td><?php echo $row["ncc_dia_chi"];?></td>
+                                            <td><?php echo $row["ncc_sdt"];?></td>
+                                            <td><?php echo $row["ncc_email"];?></td>
                                             <td class="center" align="center">
-                                                <a href="index.php?page_layout=sanpham_sua&sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
+                                                <a href="index.php?page_layout=ncc_sua&ncc_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
                                             </td>
                                             <td class='center' align='center'>
-                                                <a href="index.php?page_layout=sanpham_xoa&sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                                <a onclick="confirm('Bạn có chắc chắn muốn xóa danh mục này không?');" href="ncc_xoa.php?ma_ncc=<?php echo $row['id'];?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
                                             </td>
                                         </tr>
                                         <?php
@@ -93,12 +100,11 @@
                         </div>
                     </div>
                     <!--End Advanced Tables -->
-                    <a class="btn btn-primary" href="index.php?page_layout=sanpham_them">Thêm mới</a>
+                    <a class="btn btn-primary" href="index.php?page_layout=ncc_them">Thêm mới</a>
                 </div>
             </div>
                 <!-- /. ROW  -->
         </div>
-               <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p></footer>
     </div>
              <!-- /. PAGE INNER  -->
     <!-- /. WRAPPER  -->
