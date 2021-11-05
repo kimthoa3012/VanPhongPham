@@ -2,12 +2,10 @@
 <?php
     if(isset($_POST['submit'])){
         $ten=$_POST['ten'];
-        $ngaysinh = $_POST['ngaysinh'];
-        $gioitinh=$_POST['gioitinh'];
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
         $email=$_POST['email'];
-        $sql="INSERT INTO khach_hang (kh_hoten, kh_email, kh_gioi_tinh, kh_ngay_sinh, kh_sdt, kh_dia_chi) VALUES ('$ten','$email', '$gioitinh', '$ngaysinh','$sdt','$diachi')";
+        $sql="INSERT INTO khach_hang (kh_hoten, kh_email, kh_sdt, kh_dia_chi) VALUES ('$ten','$email', '$sdt','$diachi')";
         $result=$conn->query($sql);
         if($result){
             header("location: index.php?page_layout=ds_khachhang");
@@ -51,29 +49,6 @@
                                 <label class="col-sm-2 control-label">Họ và tên</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" placeholder="Họ tên khách hàng" name="ten" value="<?php if(isset($ten)) echo $ten;?>">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Ngày sinh</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="Ngày tháng năm sinh" name="ngaysinh" value="<?php if(isset($ngaysinh)) echo $ngaysinh;?>">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Giới tính</label>
-                                <div class="col-sm-10">
-                                  <div class="radio3 radio-check radio-inline">
-                                    <input type="radio" id="radio4" name="gioitinh" value="1">
-                                    <label for="radio4">
-                                      Nam
-                                    </label>
-                                  </div>
-                                  <div class="radio3 radio-check radio-success radio-inline">
-                                    <input type="radio" id="radio5" name="gioitinh" value="0">
-                                    <label for="radio5">
-                                      Nữ
-                                    </label>
-                                  </div>
                                 </div>
                             </div>
                             <div class="form-group">

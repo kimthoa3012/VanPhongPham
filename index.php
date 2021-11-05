@@ -42,6 +42,12 @@
                     break;
                 case 'giohang': include_once'./giohang/chitiet_giohang.php';
                     break;
+                case 'timkiem_nc': include_once'./timkiem/timkiem_nc.php';
+                    break;
+                case 'muahang': include_once'./giohang/muahang.php';
+                    break;
+                case 'taikhoan_chitiet': include_once'./taikhoan/taikhoan_chitiet.php';
+                    break;
             }
         }else include_once'home.php';
     ?>

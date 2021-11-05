@@ -1,5 +1,5 @@
 <?php
-require('../config.php');
+require('../include/config.php');
 ob_start();
 session_start();
     if($_SESSION['email']=="admin@gmail.com" and $_SESSION['pass']=="123456"){
@@ -41,6 +41,9 @@ Website: http://www.webthemez.com/
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
 
+    <!--CKeditor-->
+    <script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -76,6 +79,10 @@ Website: http://www.webthemez.com/
                     case 'ds_sanpham': include_once'ds_sanpham.php';
                         break;
                     case 'sanpham_them': include_once'sanpham_them.php';
+                        break;
+                    case 'sanpham_sua': include_once'sanpham_sua.php';
+                        break;
+                    case 'ds_tinhtrang': include_once'ds_tinhtrang.php';
                         break;
                     case 'home': include_once'ds_loaiSP.php';
                         break;

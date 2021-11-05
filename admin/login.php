@@ -1,7 +1,7 @@
 <?php
     ob_start();//tắt lỗi header
     session_start();//khởi tạo session
-    include_once'../config.php';
+    include_once'../include/config.php';
 
     if(isset($_POST['submit'])){
         $email = $_POST['email'];

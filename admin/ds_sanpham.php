@@ -72,14 +72,14 @@
                                         <tr class='odd gradeX'>
                                             <td><?php echo $row["id"];?></td>
                                             <td><img src="../image/<?php echo $row['sp_anh'];?>" width="80px"></td>
-                                            <td><?php echo $row["sp_ten"];?></td>
+                                            <td><a href="index.php?page_layout=sanpham_sua&sanpham_id=<?php echo $row['id']; ?>"><?php echo $row["sp_ten"];?></a></td>
                                             <td><?php echo $row["sp_so_luong"];?></td>
                                             <td><?php echo $row["sp_gia"];?></td>
                                             <td class="center" align="center">
                                                 <a href="index.php?page_layout=sanpham_sua&sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
                                             </td>
                                             <td class='center' align='center'>
-                                                <a href="index.php?page_layout=sanpham_xoa&sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                                <a onclick="confirm('Bạn có chắc chắn xóa');" href="sanpham_xoa.php?sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
                                             </td>
                                         </tr>
                                         <?php

@@ -34,10 +34,10 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Trang chủ</a></li>
+                            <li class="active"><a href="./index.php">Trang chủ</a></li>
                             <li><a href="./index.php?page_layout=sanpham"?>Sản phẩm</a></li>
                             <li><a href="./index.php?page_layout=lienhe">Liên hệ</a></li>
-                            <li><a href="./contact.html">Tìm kiếm</a></li>
+                            <li><a href="./index.php?page_layout=timkiem_nc">Tìm kiếm</a></li>
                            <!-- <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>

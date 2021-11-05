@@ -7,12 +7,10 @@
 
     if(isset($_POST['submit'])){
         $ten=$_POST['ten'];
-        $ngaysinh = $_POST['ngaysinh'];
-        $gioitinh=$_POST['gioitinh'];
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
         $email=$_POST['email'];
-        $sql="UPDATE khach_hang SET kh_hoten='$ten', kh_email='$email', kh_gioi_tinh='$gioitinh', kh_ngay_sinh='$ngaysinh', kh_sdt='$sdt', kh_dia_chi='$diachi' WHERE id=$kh_id";
+        $sql="UPDATE khach_hang SET kh_hoten='$ten', kh_email='$email', kh_sdt='$sdt', kh_dia_chi='$diachi' WHERE id=$kh_id";
         $result=$conn->query($sql);
         if($result){
             header("location: index.php?page_layout=ds_khachhang");
@@ -23,8 +21,6 @@
 
     if(isset($_POST['reset'])){
         $ten='';
-        $ngaysinh = '';
-        $gioitinh='';
         $diachi='';
         $sdt='';
         $email='';
@@ -56,29 +52,6 @@
                                 <label class="col-sm-2 control-label">Họ và tên</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" placeholder="Họ tên khách hàng" name="ten" value="<?php echo $row['kh_hoten'];?>">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Ngày sinh</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="Ngày tháng năm sinh" name="ngaysinh" value="<?php echo $row['kh_ngay_sinh'];?>">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Giới tính</label>
-                                <div class="col-sm-10">
-                                  <div class="radio3 radio-check radio-inline">
-                                    <input type="radio" id="radio4" name="gioitinh" value="1" <?php echo $row['kh_gioi_tinh'] == 1 ? 'checked':""; ?>>
-                                    <label for="radio4">
-                                      Nam
-                                    </label>
-                                  </div>
-                                  <div class="radio3 radio-check radio-success radio-inline">
-                                    <input type="radio" id="radio5" name="gioitinh" value="0" <?php echo $row['kh_gioi_tinh'] == 0 ? "checked":""; ?>>
-                                    <label for="radio5">
-                                      Nữ
-                                    </label>
-                                  </div>
                                 </div>
                             </div>
                             <div class="form-group">
