@@ -1,7 +1,7 @@
 <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="assets/img/logo.png" alt=""></a>
+            <a href="index.php"><img src="./assets/img//logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <?php include("./giohang/giohang.php"); ?>
@@ -23,7 +23,7 @@
                     </ul>
                 </li>-->
                 <li><a href="./index.php?page_layout=timkiem_nc">Tìm kiếm</a></li>
-                <li><a href="./index.php?page_layout=baitap">Bài tập</a>
+                <li><a href="./index.php?page_layout=baitap&page_bt=1&bai=1">Bài tập</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./index.php?page_layout=baitap&page_bt=1&bai=1">PHP & Form</a></li>
                         <li><a href="./index.php?page_layout=baitap&page_bt=2&bai=1">Mảng,chuỗi & Hàm</a></li>

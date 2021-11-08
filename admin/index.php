@@ -84,15 +84,19 @@ Website: http://www.webthemez.com/
                         break;
                     case 'ds_tinhtrang': include_once'ds_tinhtrang.php';
                         break;
+                    case 'ds_donhang': include_once'ds_donhang.php';
+                        break;
+                     case 'donhang_sua': include_once'donhang_sua.php';
+                        break;
                     case 'home': include_once'ds_loaiSP.php';
+                        break;
+                    case 'ds_binhluan': include_once'ds_binhluan.php';
                         break;
                 }
             }else include_once'ds_sanpham.php';
         ?>
                 <!-- /. ROW  -->
 			
-		
-				<?php include('include_footer.php'); ?>
             </div>
             <!-- /. PAGE INNER  -->
         </div>

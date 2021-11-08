@@ -65,7 +65,7 @@
 
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -182,7 +182,20 @@
                 </div>
                 <div class="product__pagination">
                     <?php
-                        echo $listPage;
+                        if ($page > 1){
+                            echo "<a href=" .$_SERVER['REQUEST_URI']."&page=".($page-1)."><</a> ";
+                        }
+                        for ($i=1 ; $i<=$totalPages ; $i++)
+                        {
+                            if ($i == $page)
+                            {
+                                echo "<a stylel='background-color: #17a2b8'>".$i."</a>";
+                            }
+                            else echo "<a href=" .$_SERVER['REQUEST_URI']. "&page=".$i."> ".$i."</a> ";
+                        }
+                        if ($page < $totalPages) {
+                            echo "<a href=" . $_SERVER['REQUEST_URI'] . "&page=" . ($page + 1) . ">></a>";
+                        }
                     ?>
                 </div>
             </div>

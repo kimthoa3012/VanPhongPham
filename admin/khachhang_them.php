@@ -16,8 +16,6 @@
 
     if(isset($_POST['reset'])){
         $ten='';
-        $ngaysinh = '';
-        $gioitinh='';
         $diachi='';
         $sdt='';
         $email='';

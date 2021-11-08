@@ -24,9 +24,9 @@
             for ($i=0; $i<$result->field_count; $i++) {
                 if ($i==2) {
                     if ($row[$i] == 0) {
-                        echo "<td align='center'><img src='./mypage/baitap/PHP_SQL/img/boy.png' width='50px'></td>";
+                        echo "<td align='center'><img src='./mypage/baitap/PHP_SQL/img/nam.jpg' width='50px'></td>";
                     } else {
-                        echo "<td align='center'><img src='./mypage/baitap/PHP_SQL/img/girl.png' width='50px'></td>";
+                        echo "<td align='center'><img src='./mypage/baitap/PHP_SQL/img/nu.jpg' width='50px'></td>";
                     }
                 } else  echo "<td>".$row[$i]."</td>";   
             }

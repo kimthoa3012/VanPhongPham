@@ -50,6 +50,15 @@
         $sql_dh="INSERT INTO `don_hang`(`dh_ten_nguoi_nhan`, `dh_email`, `dh_dia_chi`, `dh_sdt`, `dh_tong_tien`, `tinh_trang_id`, `dh_hinh_thuc_tt`, `dh_ngay_tao`, `dh_ghi_chu`, `kh_id`) VALUES ('$ten','$email','$diachi','$sdt','$tongtien','$tinh_trang_id','$hinhthuc_tt','$ngaytao','$ghichu','$kh_id')";
         $result_dh=$conn->query($sql_dh);
         if($result_dh){
+            foreach($_SESSION['giohang'] as $key=>$value){
+                $result_id=$conn->query("SELECT * FROM don_hang ORDER BY id DESC LIMIT 1");
+                $row_id=$result_id->fetch_array();
+                $dh_id=$row_id['id'];
+
+                $sql_ct="INSERT INTO `ct_don_hang`(`san_pham_id`, `chi_tiet_so_luong`, `don_hang_id`) VALUES ('$key','$value','$dh_id')";
+                $result_ct=$conn->query($sql_ct);
+            }
+            exit();
             unset($_SESSION['giohang']);
             echo"
                 <script type='text/javascript'>

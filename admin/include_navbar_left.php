@@ -43,11 +43,8 @@
 			</li>	
 					
             <li>
-                <a href="./index.php?page_layout="><i class="fa fa-qrcode"></i> Quản lý đơn hàng</a>
+                <a href="./index.php?page_layout=ds_donhang"><i class="fa fa-qrcode"></i> Quản lý đơn hàng<span class="fa arrow"></a>
                 <ul class="nav nav-second-level">
-                    <li>
-                        <a href="./index.php?page_layout=donhang_them">Thêm mới</a>
-                    </li>
                     <li>
                         <a href="./index.php?page_layout=ds_donhang">Danh sách</a>
                     </li>
@@ -58,15 +55,7 @@
             </li>
 
             <li>
-                <a href="./index.php?page_layout="><i class="fa fa-qrcode"></i> Quản lý bình thuận</a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="./index.php?page_layout=binhluan_them">Thêm mới</a>
-                    </li>
-                    <li>
-                        <a href="./index.php?page_layout=ds_binhluan">Danh sách</a>
-                    </li>
-                </ul>
+                <a href="./index.php?page_layout=ds_binhluan"><i class="fa fa-qrcode"></i> Quản lý bình luận</a>
             </li>
         </ul>
 

@@ -63,7 +63,7 @@
                                                 <label for="inputPassword">Mật khẩu</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <a class="small" onclick="return confirm('Bạn chắc chắn muốn thoát đăng nhập?')" href="../index.php">Hủy</a>
                                                 <input type="submit" class="btn btn-primary" name="submit" value="Đăng nhập">
                                             </div>
                                         </form>

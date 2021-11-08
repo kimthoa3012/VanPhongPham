@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    </script>
     <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- JS Scripts-->
@@ -27,15 +26,19 @@
 </head>
 
 <body>
+<?php
+    $sql="select bl.*, kh.kh_hoten, sp.sp_ten from binh_luan bl join san_pham sp on bl.sp_id=sp.id join khach_hang kh on kh.id=bl.kh_id";
+                                            $result = $conn->query($sql);
+                                            if($result){
+?>
     <div id="page-wrapper" >
         <div class="header"> 
             <h1 class="page-header">
-                Danh mục khách hàng
+                Danh mục bình luận
             </h1>
             <ol class="breadcrumb">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Quản lý khách hàng</a></li>
-                  <li class="active">Danh mục khách hàng</li>
+                  <li><a href="#">Quản lý bình luận</a></li>
             </ol> 
                                     
         </div>
@@ -47,40 +50,32 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="title">Danh mục khách hàng</div>
+                            <div class="title">Danh mục Bình luận</div>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Mã khách hàng</th>
-                                            <th>Họ tên</th>
-                                            <th>Email</th>
-                                            <th>SĐT</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Sửa</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Bình luận</th>
+                                            <th>Ngày tạo</th>
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql="select * from khach_hang";
-                                            $result = $conn->query($sql);
-                                            if($result->num_rows >0){
+
                                                 while ($row = $result->fetch_array()){
                                         ?>
                                         <tr class='odd gradeX'>
-                                            <td><?php echo $row["id"];?></td>
                                             <td><?php echo $row["kh_hoten"];?></td>
-                                            <td><?php echo $row["kh_email"];?></td>
-                                            <td><?php echo $row["kh_sdt"];?></td>
-                                            <td><?php echo $row["kh_dia_chi"];?></td>
-                                            <td class="center" align="center">
-                                                <a href="index.php?page_layout=khachhang_sua&khachhang_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
-                                            </td>
+                                            <td><?php echo $row["sp_ten"];?></td>
+                                            <td><?php echo $row["binh_luan_noi_dung"];?></td>
+                                            <td><?php echo $row["binh_luan_ngay"];?></td>
                                             <td class='center' align='center'>
-                                                <a onclick="confirm('Bạn có chắc chắn muốn xóa danh mục này không?');" href="khachhang_xoa.php?khachhang_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                                <a onclick="return confirm('Bạn có chắc chắn muốn xóa bình luận này không?');" href="binhluan_xoa.php?bl_id=<?php echo $row['id'];?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
                                             </td>
                                         </tr>
                                         <?php
@@ -93,8 +88,6 @@
                             
                         </div>
                     </div>
-                    <!--End Advanced Tables -->
-                    <a class="btn btn-primary" href="index.php?page_layout=khachhang_them">Thêm mới</a>
                 </div>
             </div>
                 <!-- /. ROW  -->

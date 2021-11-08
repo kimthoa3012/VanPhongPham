@@ -11,13 +11,7 @@
     $totalPages=($totalRow/$rowsPerPage);
 
     $listPage="";
-    for($i=1; $i<=$totalPages; $i++){
-        if($page==$i){
-            $listPage .="<a href='./index.php?page_layout=sanpham&page=$i' class='active'>$i</a>";
-        }else{
-            $listPage .="<a href='./index.php?page_layout=sanpham&page=$i'>$i</a>";
-        }
-    }
+
 ?>
 <style type="text/css">
     a .active{
@@ -26,15 +20,15 @@
 </style>
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Organi Shop</h2>
+                        <h2>Statstore Shop</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
-                            <span>Shop</span>
+                            <span>Sản phẩm</span>
                         </div>
                     </div>
                 </div>
@@ -54,13 +48,13 @@
                             <ul>
                                 <li><a href="./index.php?page_layout=sanpham">Tất cả</a></li>
                                 <?php
-                                    $sql = "SELECT * FROM loai_hang";
-                                    $result = $conn->query($sql);
-                                    if($result->num_rows > 0)
-                                        while($row=$result->fetch_array()){
+                                    $sql_loai = "SELECT * FROM loai_hang";
+                                    $result_loai = $conn->query($sql_loai);
+                                    if($result_loai->num_rows > 0)
+                                        while($row_loai=$result_loai->fetch_array()){
 
                                 ?>
-                                <li><a href="/index.php?page_layout=sanpham&loai=<?php echo $row['id']?>"><?php echo $row['loai_hang_ten']?></a></li>
+                                <li><a href="./index.php?page_layout=sanpham&loai=<?php echo $row_loai['id']?>"><?php echo $row_loai['loai_hang_ten']?></a></li>
                                 <?php
                                         }
                                 ?>
@@ -71,13 +65,13 @@
                             <ul>
                                 <li><a href="./index.php?page_layout=sanpham">Tất cả</a></li>
                                 <?php
-                                    $sql = "SELECT * FROM nha_cung_cap";
-                                    $result = $conn->query($sql);
-                                    if($result->num_rows > 0)
-                                        while($row=$result->fetch_array()){
+                                    $sql_ncc = "SELECT * FROM nha_cung_cap";
+                                    $result_ncc = $conn->query($sql_ncc);
+                                    if($result_ncc->num_rows > 0)
+                                        while($row_ncc=$result_ncc->fetch_array()){
 
                                 ?>
-                                <li><a href="./index.php?page_layout=sanpham&ncc=<?php echo $row['id']?>"><?php echo $row['ncc_ten']?></a></li>
+                                <li><a href="./index.php?page_layout=sanpham&ncc=<?php echo $row_ncc['id']?>"><?php echo $row_ncc['ncc_ten']?></a></li>
                                 <?php
                                         }
                                 ?>
@@ -119,9 +113,22 @@
                         ?>
                     </div>
                     <div class="product__pagination">
-                        <?php
-                            echo $listPage;
-                        ?>
+                    <?php
+                        if ($page > 1){
+                            echo "<a href=" .$_SERVER['REQUEST_URI']."&page=".($page-1)."><</a> ";
+                        }
+                        for ($i=1 ; $i<=$totalPages ; $i++)
+                        {
+                            if ($i == $page)
+                            {
+                                echo "<a stylel='background-color: #17a2b8'>".$i."</a>";
+                            }
+                            else echo "<a href=" .$_SERVER['REQUEST_URI']. "&page=".$i."> ".$i."</a> ";
+                        }
+                        if ($page < $totalPages) {
+                            echo "<a href=" . $_SERVER['REQUEST_URI'] . "&page=" . ($page + 1) . ">></a>";
+                        }
+                    ?>
                     </div>
                 </div>
             </div>

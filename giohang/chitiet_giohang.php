@@ -1,6 +1,6 @@
 
 <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -102,7 +102,7 @@
                             Cập nhật giỏ hàng</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-8">
                     <!--<div class="shoping__continue">
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
@@ -113,12 +113,10 @@
                         </div>
                     </div>-->
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-4">
                     <div class="shoping__checkout">
-                        <h5>Tổng tiền</h5>
                         <ul>
-                            <!--<li>Subtotal <span>$454.98</span></li>-->
-                            <li>Tổng <span><?php echo $tongtien; ?> VNĐ</span></li>
+                            <li>Tổng tiền<span><?php echo $tongtien; ?> VNĐ</span></li>
                         </ul>
                         <a href="./index.php?page_layout=muahang" class="primary-btn">Mua hàng</a>
                     </div>

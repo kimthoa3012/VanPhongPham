@@ -37,23 +37,23 @@
                         </div>
                     </div>
                     <?php if(isset($_GET['page_layout'])){ if($_GET['page_layout'] == 'home'){
-                                echo '<div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                                echo '<div class="hero__item set-bg" data-setbg="./assets/img/banner_index.jpg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <span>văn phòng phẩm</span>
+                            <h2>Văn phòng phẩm <br />an toàn - chất lương</h2>
+                            <p>Dành cho mọi đối tượng</p>
+                            <a href="index.php/page_layout=sanpham" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>';
                             
                         }}
                         else{
-                            echo '<div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                            echo '<div class="hero__item set-bg" data-setbg="./assets/img/banner_index.jpg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <span>văn phòng phẩm</span>
+                            <h2>Văn phòng phẩm <br />an toàn - chất lương</h2>
+                            <p>Dành cho mọi đối tượng</p>
+                            <a href="index.php/page_layout=sanpham" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>';
                         }
