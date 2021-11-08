@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require("../config.php");
+	require("../include/config.php");
 	if($_SESSION['email']=="admin@gmail.com" && $_SESSION['pass']=="123456"){
 		$ma_ncc = $_GET['ma_ncc'];
 

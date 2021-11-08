@@ -6,7 +6,7 @@
     
     <script type="text/javascript">
         function xoa_dm(){
-            var conf=cofirm("Bạn có chắc chắn muốn xóa danh mục này không?");
+            var conf=confirm("Bạn có chắc chắn muốn xóa danh mục này không?");
             return conf;
         }
     </script>
@@ -86,7 +86,7 @@
                                                 <a href="index.php?page_layout=ncc_sua&ncc_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
                                             </td>
                                             <td class='center' align='center'>
-                                                <a onclick="confirm('Bạn có chắc chắn muốn xóa danh mục này không?');" href="ncc_xoa.php?ma_ncc=<?php echo $row['id'];?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                                <a onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?');" href="ncc_xoa.php?ma_ncc=<?php echo $row['id'];?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
                                             </td>
                                         </tr>
                                         <?php

@@ -37,6 +37,7 @@
                     }
                     $strId = implode(',', $arrId);
                     $sql = "SELECT * FROM san_pham WHERE id IN ($strId) ORDER BY id DESC";
+                    //var_dump($sql); exit;
                     $result = $conn->query($sql);
             ?>
             <div class="row">

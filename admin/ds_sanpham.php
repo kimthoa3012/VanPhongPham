@@ -23,6 +23,12 @@
             text-align: center;
         }
     </style>
+    <script type="text/javascript">
+        function xoa_dm(){
+            var conf=cofirm("Bạn có chắc chắn muốn xóa danh mục này không?");
+            return conf;
+        }
+    </script>
 </head>
 
 <body>
@@ -79,7 +85,7 @@
                                                 <a href="index.php?page_layout=sanpham_sua&sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-pencil' aria-hidden='true'></i></a>
                                             </td>
                                             <td class='center' align='center'>
-                                                <a onclick="confirm('Bạn có chắc chắn xóa');" href="sanpham_xoa.php?sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
+                                                <a onclick="xoa_dm();" href="sanpham_xoa.php?sanpham_id=<?php echo $row['id']; ?>"><i class='fa fa-times-circle-o' aria-hidden='true'></i></a>
                                             </td>
                                         </tr>
                                         <?php

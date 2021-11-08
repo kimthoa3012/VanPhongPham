@@ -618,7 +618,7 @@ ol {
 .hero__categories ul {
 	border: 1px solid #ebebeb;
 	padding-left: 40px;
-	padding-top: 80px;
+	padding-top: 10px;
 	padding-bottom: 12px;
 }
 
@@ -1002,7 +1002,7 @@ ol {
 
 .latest-product__item__text {
 	overflow: hidden;
-	padding-top: 80px;
+	padding-top: 10px;
 }
 
 .latest-product__item__text h6 {
@@ -1621,7 +1621,7 @@ ol {
 
 .product__pagination,
 .blog__pagination {
-	padding-top: 80px;
+	padding-top: 10px;
 }
 
 .product__pagination a,

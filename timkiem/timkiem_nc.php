@@ -1,9 +1,29 @@
 <?php
+    if(isset($_GET['page'])){
+        $page=$_GET['page'];
+
+    }else{
+        $page=1;
+    }
+    $rowsPerPage=4;
+    $perRow=$page*$rowsPerPage-$rowsPerPage;
+    $totalRow=$conn->query("SELECT * FROM san_pham")->num_rows;
+    $totalPages=($totalRow/$rowsPerPage);
+
+    $listPage="";
+    for($i=1; $i<=$totalPages; $i++){
+        if($page==$i){
+            $listPage .="<a href='./index.php?page_layout=timkiem_nc&page=$i' class='active'>$i</a>";
+        }else{
+            $listPage .="<a href='./index.php?page_layout=timkiem_nc&page=$i'>$i</a>";
+        }
+    }
+
     if(isset($_POST['timkiem'])){
         $sql_sp="SELECT * FROM san_pham WHERE 1";
 
-        if(isset($_POST['ten'])){
-            $ten=$_POST['ten'];
+        if(isset($_POST['ten_tk'])){
+            $ten_tk=$_POST['ten_tk'];
             $ten1 = trim($ten);
             $arr_ten1 = explode(' ', $ten1);
             $textNew = implode('%', $arr_ten1);
@@ -33,9 +53,14 @@
                 $sql_sp .=" AND loai_id={$loai}";
             }
         }
-
+        $sql_sp .=" LIMIT {$perRow}, {$rowsPerPage}";
+        $result_sp=$conn->query($sql_sp);
+    }else{
+        $sql_sp="SELECT * FROM san_pham LIMIT {$perRow}, {$rowsPerPage}";
         $result_sp=$conn->query($sql_sp);
     }
+
+
 ?>
 
 
@@ -71,7 +96,7 @@
                 <form method="POST">
                     <dl class="row">
                       <dt class="col-sm-3">Tên</dt>
-                      <dd class="col-sm-9"><input type="text" name="ten" value="<?php if(isset($ten)) echo $ten; ?>"></dd>
+                      <dd class="col-sm-9"><input type="text" name="ten" value="<?php if(isset($ten_tk)) echo $ten_tk; ?>"></dd>
 
                       <dt class="col-sm-3">Giá</dt>
                       <dd class="col-sm-9">
@@ -142,7 +167,7 @@
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                     <li><a href="./index.php?page_layout=xemchitiet&sp_id=<?php echo $row_sp['id']?>"><i class="fa fa-info" aria-hidden="true"></i></a></li>
-                                    <li><a href="./giohang/themhang.php?sp_id=<?php echo $row['id']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="./giohang/themhang.php?sp_id=<?php echo $row_sp['id']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product__item__text">
@@ -156,10 +181,9 @@
                     ?>
                 </div>
                 <div class="product__pagination">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                    <?php
+                        echo $listPage;
+                    ?>
                 </div>
             </div>
         </div>

@@ -7,8 +7,8 @@
         $mota=$_POST['mota'];
         $image=$_FILES['image']['name'];
         $image1=$_FILES['image1']['name'];
-        $image3=$_FILES['image2']['name'];
-        $image4=$_FILES['image3']['name'];
+        $image2=$_FILES['image2']['name'];
+        $image3=$_FILES['image3']['name'];
         if($_POST['ncc']==0){
             $error_ncc="<span style='color: red;'>Vui lòng chọn nhà cung cấp</span>";
         }else{$ncc=$_POST['ncc'];}

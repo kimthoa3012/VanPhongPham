@@ -8,7 +8,7 @@
 
 <head>
     <?php include("include/head.php") ?>
-    <title>Ogani | Template</title>
+    <title>Online shop StatStore</title>
 </head>
 
 <body>
@@ -48,6 +48,9 @@
                     break;
                 case 'taikhoan_chitiet': include_once'./taikhoan/taikhoan_chitiet.php';
                     break;
+                case 'baitap': include_once'./baitap.php';
+                    break;
+                case 'gioithieu': include_once'./mypage/gioiThieuBanThan.php';
             }
         }else include_once'home.php';
     ?>

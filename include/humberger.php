@@ -23,7 +23,14 @@
                     </ul>
                 </li>-->
                 <li><a href="./index.php?page_layout=timkiem_nc">Tìm kiếm</a></li>
-                <li><a href="./index.php?page_layout=lienhe">Liên hệ</a></li>
+                <li><a href="./index.php?page_layout=baitap">Bài tập</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./index.php?page_layout=baitap&page_bt=1&bai=1">PHP & Form</a></li>
+                        <li><a href="./index.php?page_layout=baitap&page_bt=2&bai=1">Mảng,chuỗi & Hàm</a></li>
+                        <li><a href="./index.php?page_layout=baitap&page_bt=3&bai=1">PHP & MySQL</a></li>
+                    </ul>
+                </li>
+                <li><a href="./index.php?page_layout=gioithieu">Thông tin cá nhân</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>

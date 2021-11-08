@@ -26,7 +26,7 @@
                         <ul>
                             <li><a href="./index.php?page_layout=sanpham">Thông tin tài khoản</a></li>
                             <li><a href="./index.php?page_layout=sanpham">Đơn hàng</a></li>
-                            <li><a href="./index.php?page_layout=sanpham">Đăng xuất</a></li>
+                            <li><a href="./taikhoan/dangxuat.php">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
